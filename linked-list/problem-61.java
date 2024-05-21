@@ -10,9 +10,11 @@
  */
 class Solution {
     public ListNode rotateRight(ListNode head, int k) {
-        if (k == 0)
+
+        int n = findSize(head);
+        if (n == 0 || k == 0 || k % n == 0)
             return head;
-        int actK = k % findSize(head);
+        int actK = k % n;
 
         ListNode dummyNode = new ListNode(-1);
         dummyNode.next = head;
