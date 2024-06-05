@@ -20,7 +20,8 @@ class Solution {
                 if (indices.get((int) charToRemove - 'a').size() == 0)
                     pq.remove(charToRemove);
             } else {
-                pq.add(currChar);
+                if (!pq.contains(currChar))
+                    pq.add(currChar);
                 indices.get((int) currChar - 'a').add(i);
             }
         }
